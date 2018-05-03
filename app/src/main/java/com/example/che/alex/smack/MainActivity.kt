@@ -1,5 +1,6 @@
 package com.example.che.alex.smack
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -35,7 +36,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun loginBtnHeaderClick(view: View) {
-
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
     }
 
     fun addChannelBtnClick(view: View) {
