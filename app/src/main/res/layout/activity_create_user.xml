@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateUserActivity">
+    tools:context=".controllers.CreateUserActivity">
 
     <EditText
         android:id="@+id/createUserNameText"
@@ -76,13 +76,14 @@
         app:srcCompat="@drawable/profiledefault" />
 
     <Button
-        android:id="@+id/createUserChooseColorClick"
+        android:id="@+id/createUserChooseColorBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorAccent"
+        android:onClick="createUserChooseColorClick"
         android:text="color"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,13 +91,14 @@
         app:layout_constraintTop_toBottomOf="@+id/avatarImageChoose" />
 
     <Button
-        android:id="@+id/createUserCreateClick"
+        android:id="@+id/createUserCreateBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:background="@color/colorAccent"
+        android:onClick="createUserCreateClick"
         android:text="create user"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
