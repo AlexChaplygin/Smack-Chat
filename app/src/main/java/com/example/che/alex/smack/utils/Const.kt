@@ -1,6 +1,8 @@
 package com.example.che.alex.smack.utils
 
 const val BASE_URL = "https://alexchattest.herokuapp.com/v1/"
+const val GET_CHANNELS_URL = "${BASE_URL}channel/"
+const val SOCKET_URL = "https://alexchattest.herokuapp.com/"
 const val URL_REGISTER = "${BASE_URL}account/register"
 const val URL_LOGIN = "${BASE_URL}account/login"
 const val URL_CREATE_USER = "${BASE_URL}user/add"
