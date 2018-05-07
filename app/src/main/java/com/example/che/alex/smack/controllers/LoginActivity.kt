@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         val pass = passLoginText.text.toString()
         hideKeyboard()
         if(email.isNotEmpty() && pass.isNotEmpty()) {
-            AuthService.loginUser(this, email, pass) { loginSuccess ->
+            AuthService.loginUser(email, pass) { loginSuccess ->
                 if (loginSuccess) {
                     AuthService.findUserByEmail(this) { findSuccess ->
                         if (findSuccess) {
