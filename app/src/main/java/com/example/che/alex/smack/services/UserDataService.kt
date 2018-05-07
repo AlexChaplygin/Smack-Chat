@@ -1,6 +1,7 @@
 package com.example.che.alex.smack.services
 
 import android.graphics.Color
+import com.example.che.alex.smack.controllers.App
 
 object UserDataService {
 
@@ -16,10 +17,10 @@ object UserDataService {
         avatarName =""
         email =""
         name =""
-        AuthService.authToken = ""
+        App.sharedPreferences.authToken = ""
 //        AuthService.authUser = ""
-        AuthService.authEmail = ""
-        AuthService.isLoggedIn = false
+        App.sharedPreferences.userEmail = ""
+        App.sharedPreferences.isLoggedIn = false
     }
 
     fun parseColorString(color : String) : Int {

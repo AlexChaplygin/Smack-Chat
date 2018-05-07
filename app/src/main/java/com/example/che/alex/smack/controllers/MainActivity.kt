@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
 
         setupAdapters()
+
+        if (App.sharedPreferences.isLoggedIn) {
+            AuthService.findUserByEmail(this) {}
+        }
     }
 
     override fun onResume() {
@@ -66,7 +70,7 @@ class MainActivity : AppCompatActivity() {
 
     private val userDataChangeReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent?) {
-            if (AuthService.isLoggedIn) {
+            if (App.sharedPreferences.isLoggedIn) {
                 nameUserHeader.text = UserDataService.name
                 emailTextHeader.text = UserDataService.email
                 val resourceId = resources.getIdentifier(UserDataService.avatarName, "drawable", packageName)
@@ -107,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
     fun loginBtnHeaderClick(view: View) {
 
-        if (AuthService.isLoggedIn) {
+        if (App.sharedPreferences.isLoggedIn) {
             UserDataService.logout()
             nameUserHeader.text = "name"
             emailTextHeader.text = "email"
@@ -121,7 +125,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addChannelBtnClick(view: View) {
-        if (AuthService.isLoggedIn) {
+        if (App.sharedPreferences.isLoggedIn) {
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.add_channel_dialog, null)
 
