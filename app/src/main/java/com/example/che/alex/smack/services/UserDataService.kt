@@ -21,6 +21,9 @@ object UserDataService {
 //        AuthService.authUser = ""
         App.sharedPreferences.userEmail = ""
         App.sharedPreferences.isLoggedIn = false
+
+        MessageService.clearChannels()
+        MessageService.clearMessages()
     }
 
     fun parseColorString(color : String) : Int {
